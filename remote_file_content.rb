@@ -11,7 +11,7 @@ module Jekyll
       puts 'Fetching content of url: ' + url
 
       if url =~ URI::regexp
-        @content = fetchContent(url)
+        @content = fetchContent(url).force_encoding("UTF-8")
       else
         raise 'Invalid URL passed to RemoteFileContent'
       end
